@@ -1,0 +1,66 @@
+.header {
+    position: relative;
+    background-color: #1f1615;
+    overflow: hidden;
+
+    &__video {
+        position: absolute;
+        top: -90%;
+        left: 0;
+        opacity: 0.1;
+    }
+
+    &__video video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+    }
+
+    &__wrapper {
+        padding: 22px 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-family: "Rubik Spray Paint", cursive;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    &__seacrh-form {
+        width: 500px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__seacrh-form input {
+        background-color: #fff;
+    }
+
+    &__menu-container {
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        margin: 0 5px 0;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    &__cart {
+    }
+
+    &__user {
+    }
+
+    &__menu {
+    }
+}
