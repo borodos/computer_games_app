@@ -9,13 +9,13 @@ import comp3 from "../assets/computers/hyperpc-ampere-mini.jpg";
 import comp4 from "../assets/computers/hyperpc-ampere-mini.jpg";
 import ReactStars from "react-rating-stars-component";
 
-export const ProductCard = () => {
+export const ProductCard = ({ catalog }) => {
     const ratingChanged = (newRating) => {
         console.log(newRating);
     };
 
     return (
-        <div className="product-card">
+        <div className={`product-card ${catalog === "true" ? "product-card_small" : ""}`}>
             <div className="product-card__img">
                 <img src={comp2} alt="Computer" />
             </div>
@@ -28,8 +28,14 @@ export const ProductCard = () => {
                     Описание
                 </a>
                 <div className="product-card__price">1000$</div>
-                <Button mt="10px" color="gray.900" variant="solid" _hover={{ bg: "black", color: "white" }} width="50%">
-                    Settings
+                <Button
+                    mt="10px"
+                    color="gray.900"
+                    variant="solid"
+                    _hover={{ bg: "#242424b0", color: "white" }}
+                    width="50%"
+                >
+                    Купить
                 </Button>
             </div>
         </div>
