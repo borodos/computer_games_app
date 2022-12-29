@@ -1,0 +1,16 @@
+.new-products {
+    margin-top: 40px;
+    color: white;
+
+    &__title {
+        margin-bottom: 15px;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    &__catalog {
+        display: grid;
+        column-gap: 60px;
+        grid-template-columns: repeat(3, auto);
+    }
+}
