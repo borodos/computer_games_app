@@ -12,7 +12,7 @@ export const NewProductsMain = () => {
             <div className="new-products__title">
                 <h2>НОВИНКИ МАГАЗИНА</h2>
             </div>
-            <div className="new-products__catalog">
+            <div className="new-products__cards">
                 {cards.map((value, index) => (
                     <ProductCard key={`${value}-${index}`} />
                 ))}

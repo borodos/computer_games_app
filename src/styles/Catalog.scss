@@ -1,4 +1,4 @@
-.new-products {
+.catalog {
     margin-top: 40px;
     color: white;
 
@@ -10,7 +10,7 @@
 
     &__cards {
         display: grid;
-        column-gap: 60px;
-        grid-template-columns: repeat(3, auto);
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 27%);
     }
 }

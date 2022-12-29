@@ -1,6 +1,4 @@
 .product-card {
-    display: flex;
-    flex-direction: column;
     background: linear-gradient(0deg, rgb(0, 0, 0), rgb(65, 65, 65));
     color: white;
     border: solid 1px rgb(36, 36, 36);
@@ -10,6 +8,7 @@
     font-size: 1.2em;
 
     &__content {
+        padding: 5px;
         margin-top: 15px;
         display: flex;
         flex-direction: column;
@@ -31,7 +30,8 @@
     &__price {
         font-style: italic;
     }
+}
 
-    &__rating {
-    }
+.product-card_small {
+    font-size: 1.1em;
 }
