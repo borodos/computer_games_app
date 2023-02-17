@@ -16,6 +16,17 @@
 
     &__img {
         border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__description {
+        cursor: pointer;
+    }
+
+    &__description:hover {
+        text-decoration: underline;
     }
 
     &__img img {

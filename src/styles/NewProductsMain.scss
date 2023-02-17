@@ -3,14 +3,22 @@
     color: white;
 
     &__title {
-        margin-bottom: 15px;
         font-size: 2em;
         text-align: center;
     }
 
     &__cards {
         display: grid;
-        column-gap: 60px;
+        column-gap: 56px;
         grid-template-columns: repeat(3, auto);
+    }
+
+    &__slider {
+        display: grid;
+        row-gap: 12px;
+    }
+
+    &__component {
+        padding: 10%;
     }
 }

@@ -14,11 +14,11 @@ ol[class],
 li {
     margin: 0;
     list-style: none;
-    font-family: "Rubik", sans-serif;
 }
 
 body {
     background-color: rgb(44, 44, 44) !important;
+    font-family: "Rubik", sans-serif !important;
 }
 
 a:not([class]) {
@@ -42,4 +42,8 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+.hidden {
+    display: none;
 }

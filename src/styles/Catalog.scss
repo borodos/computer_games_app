@@ -3,7 +3,6 @@
     color: white;
 
     &__title {
-        margin-bottom: 15px;
         font-size: 2em;
         text-align: center;
     }
@@ -12,5 +11,14 @@
         display: grid;
         justify-content: space-between;
         grid-template-columns: repeat(3, 27%);
+    }
+
+    &__slider {
+        display: grid;
+        row-gap: 15px;
+    }
+
+    &__component {
+        padding: 10%;
     }
 }

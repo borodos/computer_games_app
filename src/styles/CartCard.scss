@@ -1,0 +1,40 @@
+.cart-card {
+    padding: 8px;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img-container {
+        margin-right: 16px;
+        box-shadow: 0 0 8px #000000;
+        border-radius: 8px;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+
+    &__content {
+    }
+
+    &__description {
+        cursor: pointer;
+    }
+
+    &__description:hover {
+        text-decoration: underline;
+    }
+
+    &__price {
+        font-style: italic;
+    }
+
+    &__menu {
+        padding-top: 8px;
+
+        button + button {
+            margin-left: 8px;
+        }
+    }
+}

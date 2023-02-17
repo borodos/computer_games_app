@@ -1,0 +1,24 @@
+.cart {
+    flex-grow: 1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+
+    &__container {
+        box-shadow: 0 0 8px #fff;
+        border-radius: 8px;
+    }
+
+    &__wrapper {
+        padding: 8px;
+    }
+
+    &__list {
+    }
+
+    &__p {
+        padding: 8px;
+    }
+}
