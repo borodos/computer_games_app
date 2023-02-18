@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { FormControl, FormLabel, FormErrorMessage, Input, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { FormControl, FormLabel, FormErrorMessage, Input, Button, useToast } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { mokUsers } from "../mokUsers";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import "../styles/AuthPage.scss";
 import { setAuthUser } from "../redux/authUserSlice";
@@ -14,9 +14,9 @@ export const LoginPage = () => {
 
     const isErrorEmail = email === "";
     const isErrorPassword = password === "";
-
-    const userStore = useSelector((store) => store.authUserSlice.user);
     const dispatch = useDispatch();
+
+    const toast = useToast();
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -27,6 +27,15 @@ export const LoginPage = () => {
                 }
                 dispatch(setAuthUser(user));
                 navigate("/");
+            } else {
+                toast({
+                    position: "top-center",
+                    title: "Error",
+                    description: "Неправильный пароль или почта",
+                    status: "error",
+                    duration: 2000,
+                    isClosable: true,
+                });
             }
             return user;
         });

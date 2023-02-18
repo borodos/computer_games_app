@@ -29,9 +29,13 @@
         text-decoration: underline;
     }
 
+    &__img {
+    }
+
     &__img img {
-        border-radius: 5px;
         box-shadow: 0px 0px 10px 0px black;
+        border-radius: 8px;
+        object-fit: contain;
     }
 
     &__name-product {

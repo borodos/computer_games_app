@@ -5,11 +5,17 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import "../../styles/NavBar.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutAuthUser } from "../../redux/authUserSlice";
 
 export const NavMenu = () => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.authUserSlice.user);
+    const dispatch = useDispatch();
+
+    const logout = () => {
+        dispatch(logoutAuthUser());
+    };
 
     return (
         <Menu>
@@ -22,8 +28,9 @@ export const NavMenu = () => {
             />
             <Portal className="header__portal">
                 <MenuList className="header__menu-list">
-                    <MenuItem onClick={() => navigate(`/users/${user.id}`)}>My Profile</MenuItem>
+                    <MenuItem onClick={() => navigate(`/users/${user.id}`)}>My profile</MenuItem>
                     <MenuItem onClick={() => navigate(`/users/${user.id}/cart`)}>My cart</MenuItem>
+                    <MenuItem onClick={logout}>Logout</MenuItem>
                 </MenuList>
             </Portal>
         </Menu>

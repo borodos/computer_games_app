@@ -1,6 +1,6 @@
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Avatar, Button, Input } from "@chakra-ui/react";
+import { Avatar, Button } from "@chakra-ui/react";
 import { NavMenu } from "./NavMenu";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +12,12 @@ import videoProj2 from "../../assets/videoProj.webm";
 export const NavBar = () => {
     const navigate = useNavigate();
     const user = useSelector((state) => state.authUserSlice.user);
+
+    const imageProfile = () => {
+        if (user.image) {
+            return require("../../assets/potter.jpeg");
+        }
+    };
 
     const showHeader = () => {
         if (!user?.isAuth) {
@@ -32,7 +38,6 @@ export const NavBar = () => {
                     MySoft
                 </h1>
 
-                <div className="header__seacrh-form">{/* <Input placeholder="Search..." disabled /> */}</div>
                 <div className="header__menu-container">
                     <Button
                         type="button"
@@ -47,7 +52,7 @@ export const NavBar = () => {
                         <Link className="header__user-text" to={`/users/${user.id}`}>
                             {user?.firstName} {user?.secondName}
                         </Link>
-                        <Avatar name={`${user?.firstName} ${user?.secondName}`} />
+                        <Avatar name={`${user?.firstName} ${user?.secondName}`} src={imageProfile()} />
                     </div>
                     <NavMenu />
                 </div>

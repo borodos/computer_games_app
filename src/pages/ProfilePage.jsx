@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Avatar, Input } from "@chakra-ui/react";
 
 import "../styles/ProfilePage.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setProfileImage } from "../redux/authUserSlice";
 
 export const ProfilePage = () => {
     const navigate = useNavigate();
     const user = useSelector((store) => store.authUserSlice.user);
     const [file, setFile] = useState("");
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (!user.isAuth) {
@@ -20,6 +22,7 @@ export const ProfilePage = () => {
         if (file) {
             const splittedFile = file.split("\\");
             const filePath = splittedFile[splittedFile.length - 1];
+            dispatch(setProfileImage(`./assets/${filePath}`));
             return require(`../assets/${filePath}`);
         }
     };

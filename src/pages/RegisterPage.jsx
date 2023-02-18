@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../styles/AuthPage.scss";
-import { FormControl, FormLabel, FormErrorMessage, FormHelperText, Input, Button, Box } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { FormControl, FormLabel, FormErrorMessage, Input, Button, Box } from "@chakra-ui/react";
 import { mokUsers } from "../mokUsers";
+import { useDispatch } from "react-redux";
+import { setAuthUser } from "../redux/authUserSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 export const RegisterPage = () => {
     const [email, setEmail] = useState("");
@@ -15,19 +17,27 @@ export const RegisterPage = () => {
     const isErrorFirstName = firstName === "";
     const isErrorSecondName = secondName === "";
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const onSubmit = (event) => {
         event.preventDefault();
 
-        mokUsers.push({
-            id: mokUsers.length++,
+        const newUser = {
+            id: mokUsers.length + 1,
             firstName: firstName,
             secondName: secondName,
-            isAuth: false,
+            isAuth: true,
             email: email,
             password: password,
             token: "eyJhbGciOiJDAazxXcaAWeqsaInR5cCI6IkpXVCJ9.ejSjdpoaSIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-        });
-        console.log(mokUsers);
+            image: "",
+        };
+
+        mokUsers.push(newUser);
+
+        dispatch(setAuthUser(newUser));
+        navigate("/");
     };
 
     return (
