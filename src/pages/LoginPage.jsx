@@ -46,30 +46,30 @@ export const LoginPage = () => {
             <div className="login__container">
                 <div className="login__wrapper">
                     <div className="login__title">
-                        <span>Welcome to MySoft! Please, sign in.</span>
+                        <span>Пожалуйста, войдите.</span>
                     </div>
                     <div className="login__body">
                         <form id="form-login" onSubmit={onSubmit}>
                             <FormControl className="email-container" isInvalid={isErrorEmail}>
                                 <FormLabel>Email</FormLabel>
                                 <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                {isErrorEmail ? <FormErrorMessage>Email is required.</FormErrorMessage> : null}
+                                {isErrorEmail ? <FormErrorMessage>Введите email.</FormErrorMessage> : null}
                             </FormControl>
                             <FormControl className="password-container" isInvalid={isErrorPassword}>
-                                <FormLabel>Password</FormLabel>
+                                <FormLabel>Пароль</FormLabel>
                                 <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                {isErrorPassword ? <FormErrorMessage>Password is required.</FormErrorMessage> : null}
+                                {isErrorPassword ? <FormErrorMessage>Введите парольль.</FormErrorMessage> : null}
                             </FormControl>
                         </form>
                     </div>
                     <div className="login__text">
                         <span>
-                            Don't have an account? <Link to="/registration">Sign In</Link>
+                            Нет аккаунта? <Link to="/registration">Зарегистрироваться</Link>
                         </span>
                     </div>
                     <div className="login__menu">
                         <Button colorScheme="gray" variant="outline" type="submit" form="form-login">
-                            Log In
+                            Войти
                         </Button>
                     </div>
                 </div>

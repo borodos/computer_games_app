@@ -45,60 +45,56 @@ export const RegisterPage = () => {
             <div className="register__container">
                 <div className="register__wrapper">
                     <div className="register__title">
-                        <span>Welcome to MySoft! Please, sign in.</span>
+                        <span>Пожалуйста, войдите.</span>
                     </div>
                     <div className="register__body">
                         <form id="form-register" onSubmit={onSubmit}>
                             <Box className="name-container" py={2}>
                                 <FormControl className="firstname-container" isInvalid={isErrorFirstName}>
-                                    <FormLabel>First name</FormLabel>
+                                    <FormLabel>Имя</FormLabel>
                                     <Input
                                         type="text"
                                         value={firstName}
                                         onChange={(e) => setFirstName(e.target.value)}
                                     />
-                                    {isErrorEmail ? <FormErrorMessage>First name is required.</FormErrorMessage> : null}
+                                    {isErrorEmail ? <FormErrorMessage>Введите имя.</FormErrorMessage> : null}
                                 </FormControl>
                                 <FormControl className="secondname-container" isInvalid={isErrorSecondName}>
-                                    <FormLabel>Second name</FormLabel>
+                                    <FormLabel>Фамилия</FormLabel>
                                     <Input
                                         type="text"
                                         value={secondName}
                                         onChange={(e) => setSecondName(e.target.value)}
                                     />
-                                    {isErrorEmail ? (
-                                        <FormErrorMessage>Second name is required.</FormErrorMessage>
-                                    ) : null}
+                                    {isErrorEmail ? <FormErrorMessage>Введите фамилию.</FormErrorMessage> : null}
                                 </FormControl>
                             </Box>
                             <Box py={2}>
                                 <FormControl className="email-container" isInvalid={isErrorEmail}>
                                     <FormLabel>Email</FormLabel>
                                     <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                    {isErrorEmail ? <FormErrorMessage>Email is required.</FormErrorMessage> : null}
+                                    {isErrorEmail ? <FormErrorMessage>Введите email.</FormErrorMessage> : null}
                                 </FormControl>
                                 <FormControl className="password-container" isInvalid={isErrorPassword}>
-                                    <FormLabel>Password</FormLabel>
+                                    <FormLabel>Пароль</FormLabel>
                                     <Input
                                         type="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
-                                    {isErrorPassword ? (
-                                        <FormErrorMessage>Password is required.</FormErrorMessage>
-                                    ) : null}
+                                    {isErrorPassword ? <FormErrorMessage>Введите пароль.</FormErrorMessage> : null}
                                 </FormControl>
                             </Box>
                         </form>
                     </div>
                     <div className="register__text">
                         <span>
-                            Already have an account? <Link to="/login">Log In</Link>
+                            Уже есть аккаунт? <Link to="/login">Войти</Link>
                         </span>
                     </div>
                     <div className="register__menu">
                         <Button colorScheme="gray" variant="outline" type="submit" form="form-register">
-                            Sign In
+                            Зарегистрироваться
                         </Button>
                     </div>
                 </div>
